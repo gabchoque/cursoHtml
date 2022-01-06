@@ -1,0 +1,451 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+.imagen-about-us {
+  /* width: 100px;
+  height: 100px; */
+  background-color: #0000;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count:initial;
+}
+@keyframes example {
+  0%   {background-color: rgb(213, 9, 240);}
+  25%  {
+      background-color: rgb(216, 209, 117);}
+  50%  {rotate: 180grad;background-color: rgba(233, 27, 199, 1);}
+  75% {rotate: 18000000grad;background-color: rgba(233, 27, 199, 0.226); }
+}
+body{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.contenedor{
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+
+
+}
+.titulo{
+  color:#642a73;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+  /*aguegue sombra al los titulos esto no iba*/
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.082);
+  
+
+}
+ /*header*/
+ 
+ header{
+   width: 100%;
+   height: 600px;
+   background: #bc4e9c; 
+    /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #8d44ad91, #c03a2b8a), url(../img/portada.jpg);  
+   /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #8d44ad91, #c03a2b8a), url(../img/portada.jpg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background-size: cover; 
+   background-attachment: fixed;
+   position: relative;
+
+ }
+ nav{
+   text-align: right;
+   padding: 30px 50px 0 0;
+ }
+ nav > a{
+   color: white ;
+   font-weight: 300;
+   text-decoration: none; /*quita el subrayado*/
+   margin-right: 10px;
+
+ }
+ nav > a:hover{
+  text-decoration: underline; /*pone el subrayado solo cuando paso el cursor*/
+}
+
+.wave{
+  position: absolute;
+  bottom: 0;
+  /*hasta aca la ola se ve chiquitas*/
+  width: 100%; /*con esto la ola se estiende por toda la pantalla*/
+
+
+}
+header .textos-header{
+  display: flex; /*se ve los dos titulos pegados*/
+  height: 430px; /* como que resolucion*/
+  width: 100%;
+  align-items: center; /*pone el titulo centreado de lo vertical*/
+  justify-content: center; /*pone el titulo centrado en lo horizontal */
+  /*align y justify ponen centrado el tutulo en la pagina segun*/
+  flex-direction: column; /*se uno de bajo de otro los titutlos*/
+  text-align: center;
+}
+ .textos-header h1{
+   font-size: 50px; /*me da el tamaño de la letra del primer titulo*/
+   color: white;
+   
+ }
+ .textos-header h2{
+   font-size: 30px;
+   font-weight: 300;
+   color: white;
+   
+ }
+
+ /*about-us*/
+ .contenedor-sobre-nosotros{ /*linea 35 del index*/
+   display: flex; /*pone en el centro  esos dos textos osea ya no esta debajo de la imagen*/
+   justify-content: space-evenly; /* el texto y la imagen ocupan el espacio de forma equitativa*/
+   
+ }
+ .imagen-about-us{/*linea 36 del index*/
+   width:  20%;
+ }
+.sobre-nosotros .contenido-textos{
+  width: 48%; /*agranda tanto la image y los dos textos*/
+}
+.contenido-textos h3{ /*va travajar sobre la linea del index 37 y 38 el h3*/
+  margin-bottom: 15px;
+}
+.contenido-textos h3 samp{ /*forma el circulo de 1 y 2*/
+  background: #4d0686; /*forma queda cudrada*/
+  color: white;/*el numero en blaco*/
+  border-radius: 50%; /*forma queda de cuadrado a obalado*/
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0,.5);
+  margin-right:  5px; /*para que no se quede pegado en los lados el titulo y el numero*/
+}
+.contenido-textos p{
+  padding: 0px 0px 30px 15px;
+  font-weight: 300;
+  text-align: justify;
+
+}
+/*portafolio*/
+.portafolios{
+  background:#f2f2f2;
+
+}
+.galeria-port{
+  display: flex;
+  justify-content:space-evenly;
+  flex-wrap: wrap;
+}
+.imagen-port{ /*tranaja sobre los bloques donde estan las imagenes*/
+  width: 24%; /*que tan juntas quedan las imagenes o bloques, como tener cartas juntas al jugar*/
+  margin-bottom: 10px; /*hace que se alejen un poco los bloques*/
+  height: 200px; /*muestra el largo en vertical de la caja que contiene los bloques, si agrando o achico la caja, lo bloques se juntas o dispersan mas*/
+  overflow: hidden; /* toma un tamaños para todos por igual, hidden es lo mejor si las dimenciones de las imagenes son distintas, solo que toma una parte de la img*/
+  position: relative;
+  cursor: pointer; /*haceque la imagen tenga acceso a algo*/
+  box-shadow: 0 0 6px 0 rgba(0 , 0, 0 ,.5); /* le da efecto al bloque donde esta la img, como sombreado*/
+
+}
+.imagen-port > img{/*trabaja dentro de la imagen*/
+   /*toca la  linea 50 del index <img src="IMG-20180614-WA0096.jpeg" alt=""> */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hover-galeria{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: hsla(273, 91%, 27%, 0.7);
+  transition: transform .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: scale(0);
+}
+.hover-galeria img{
+  width: 100px;
+}
+.hover-galeria p{
+  color:white;
+}
+.imagen-port:hover .hover-galeria {
+  transform:scale(1);
+}
+/*cleintes*/
+.cards{
+  
+  display: flex; /*el texto ce va al costado ya no esta abajo*/
+  justify-content: space-evenly;
+}
+
+.cards .card{
+  background: #4d0686;
+  display: flex;
+  width: 46%;
+  height: 200px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cards .card img{
+  width: 100px; /*ojo con confundir 100 PX con %, el % trabaja de una en el tamaño de la imagen, el otro en otra cosa, por eso con % salio ovalado y con tamaño grande, osea mal */
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: block;
+
+
+}
+.cards .card > .contenido-texto-card {
+  width: 60%;
+  color: #fff;
+}
+.cards .card > .contenido-texto-card p{
+  font-weight: 300;
+  padding: 5px;
+  
+}
+/*aur team*/
+.about-servicios{
+  background: #f2f2f2;
+  padding-bottom: 30px;
+
+}
+.servicio-contenedor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.servicio-individual{
+  
+  width: 28%;
+  text-align: center;
+}
+.servicio-individual img{
+  width: 50%;
+  /*agregue sobreado equisde*/
+  border-radius: 10px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+
+}
+
+.servicio-individual h3{
+  margin: 10px 0;
+}
+.servicio-individual p{
+  font-weight: 300;
+  text-align: justify;
+}
+/*footer*/
+footer{
+  background: #414141;
+  padding:60px 0 30px 0 ;
+  margin: auto;
+  overflow: hidden;
+
+}
+.contenedor-footer{
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 50px;
+  border-bottom: 1px solid  #ccc;
+
+}
+.content-foo{
+  text-align: center;
+}
+.content-foo h4{
+  
+  color: #fff;
+  border-bottom: 3px solid #af20d3;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+
+}
+.content-foo p{
+  
+  color: #ccc;
+}
+.Titulo-final-mierda{
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0 0 0;
+  color: #9e9797;
+
+}
+
+
+
+@media screen and (max-width:900px){
+  header{
+      background-position: center;
+  }
+
+  .contenedor-sobre-nosotros{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .sobre-nosotros .contenido-textos{
+      width: 90%;
+  }
+
+  .imagen-about-us{
+      width: 90%;
+  }
+
+  /* Galeria */
+
+  .imagen-port{
+      width: 44%;
+  }
+
+  /* Clientes */
+
+  .cards{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .cards .card{
+      width: 90%;
+  }
+
+  .cards .card:first-child{
+      margin-bottom: 30px;
+  }
+
+  /* servicios */
+
+  .servicio-contenedor{
+      justify-content: center;
+      flex-direction: column;
+  }
+
+  .servicio-individual{
+      width: 100%;
+      text-align: center;
+  }
+
+  .servicio-individual:nth-child(1), .servicio-ind:nth-child(2){
+      margin-bottom: 60px;
+  }
+
+  .servicio-individual img{
+      width: 90%;
+  }
+}
+
+@media screen and (max-width:500px){
+  nav{
+      text-align: center;
+      padding: 30px 0 0 0;
+  }
+
+  nav > a{
+      margin-right: 5px;
+  }
+
+  .textos-header h1{
+      font-size: 35px;
+  }
+
+  .textos-header h2{
+      font-size: 20px;
+  }
+
+  /* ABOUT US */
+
+  .imagen-about-us{/*linea 36 del index*/
+      margin-bottom: 60px;
+      width: 99%;
+  }
+
+  .sobre-nosotros .contenido-textos{
+      width: 95%;
+  }
+
+  /* Porfolio */
+
+  .imagen-port{
+      width: 95%;
+  }
+
+  /* Clients */
+
+  .cards .card{
+      height: 450px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .cards .card img{
+      width: 90px;
+      height: 90px;
+  }
+
+  /* Footer */
+
+  .contenedor-footer{
+      flex-direction: column;
+      border: none;
+  }
+
+  .content-foo{
+      margin-bottom: 20px;
+      text-align: center;
+  }
+
+  .content-foo h4{
+      border: none;
+  }
+
+  .content-foo p{
+      color: #ccc;
+      border-bottom: 1px solid #f2f2f2;
+      padding-bottom: 20px;
+  }
+
+  .Titulo-final-mierda{
+      font-size: 20px;
+  }
+}
+
+// Con Flexbox
+input {
+  display: flex;
+  justify-content: flex-end;
+}
+// ------------------------------
+// Con Positions
+input {
+  position: relative;
+}
+
+button {
+  position: static; // Probá con absolute si no funca
+  right: 0; // Es posible que acá se pase un poco de largo, es cuestion de medidas
+}
